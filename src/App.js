@@ -6,7 +6,7 @@ const App = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [error, setError] = useState("");
 
-  const apiUrl = "https://your-api.onrender.com/bfhl"; // Replace with your actual backend URL
+  const apiUrl = https://bajaj-project-wahl.onrender.com; 
 
   useEffect(() => {
     document.title = "22BCS14051"; 
