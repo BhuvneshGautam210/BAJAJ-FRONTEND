@@ -6,7 +6,7 @@ const App = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [error, setError] = useState("");
 
-  const API_URL = "https://bfhl-api.onrender.com/bfhl";
+  const apiUrl = "https://bfhl-api.onrender.com/bfhl";
 
 
   useEffect(() => {
