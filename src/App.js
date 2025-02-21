@@ -16,22 +16,26 @@ const App = () => {
 
   const handleSubmit = async () => {
     try {
-      const parsedData = JSON.parse(jsonInput); // Validate JSON
-      if (!parsedData.data) throw new Error("Invalid JSON format");
+        const response = await fetch("https://bajaj-project-wahl.onrender.com/bfhl", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ data: inputData }), // Ensure inputData is correct
+        });
 
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(parsedData),
-      });
+        if (!response.ok) {
+            throw new Error("API request failed.");
+        }
 
-      const data = await response.json();
-      setResponseData(data);
-      setError("");
-    } catch (err) {
-      setError("Invalid JSON input or API error.");
+        const result = await response.json();
+        setApiResponse(result);
+    } catch (error) {
+        console.error("API error:", error);
+        setErrorMessage("Invalid JSON input or API error.");
     }
-  };
+};
+
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
