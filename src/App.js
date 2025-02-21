@@ -6,7 +6,8 @@ const App = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [error, setError] = useState("");
 
-  const apiUrl = https://bajaj-project-wahl.onrender.com; 
+  const API_URL = "https://bfhl-api.onrender.com/bfhl";
+
 
   useEffect(() => {
     document.title = "22BCS14051"; 
